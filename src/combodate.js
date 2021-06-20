@@ -201,7 +201,7 @@
                 shortNames = this.options.template.indexOf('MMM') !== -1,
                 twoDigit = this.options.template.indexOf('MM') !== -1;
 
-            for(i=0; i<=11; i++) {
+            for(i=this.options.minMonth; i<=this.options.maxMonth; i++) {
                 if (longNamesNum) {
                     name = moment().date(1).month(i).format('MM - MMMM');
                 } else if (shortNamesNum) {
@@ -511,6 +511,8 @@
         value: null,
         minYear: 1970,
         maxYear: 2015,
+        MinMonth: 0,
+        MaxMonth: 11,
         yearDescending: true,
         minuteStep: 5,
         secondStep: 1,
